@@ -22,6 +22,10 @@
       <module fileurl="file://$PROJECT_DIR$/016-4277-尼科彻斯定理/016-4277-尼科彻斯定理.iml" filepath="$PROJECT_DIR$/016-4277-尼科彻斯定理/016-4277-尼科彻斯定理.iml" />
       <module fileurl="file://$PROJECT_DIR$/017-4257-最大公约数/017-4257-最大公约数.iml" filepath="$PROJECT_DIR$/017-4257-最大公约数/017-4257-最大公约数.iml" />
       <module fileurl="file://$PROJECT_DIR$/018-4248-计算二进制数的0的个数/018-4248-计算二进制数的0的个数.iml" filepath="$PROJECT_DIR$/018-4248-计算二进制数的0的个数/018-4248-计算二进制数的0的个数.iml" />
+      <module fileurl="file://$PROJECT_DIR$/019-4240-图片整理/019-4240-图片整理.iml" filepath="$PROJECT_DIR$/019-4240-图片整理/019-4240-图片整理.iml" />
+      <module fileurl="file://$PROJECT_DIR$/020-4249-查找非素数/020-4249-查找非素数.iml" filepath="$PROJECT_DIR$/020-4249-查找非素数/020-4249-查找非素数.iml" />
+      <module fileurl="file://$PROJECT_DIR$/021-4251-将字符串中不同字符的个数打印出来/021-4251-将字符串中不同字符的个数打印出来.iml" filepath="$PROJECT_DIR$/021-4251-将字符串中不同字符的个数打印出来/021-4251-将字符串中不同字符的个数打印出来.iml" />
+      <module fileurl="file://$PROJECT_DIR$/022-4274-字符变换/022-4274-字符变换.iml" filepath="$PROJECT_DIR$/022-4274-字符变换/022-4274-字符变换.iml" />
     </modules>
   </component>
 </project>

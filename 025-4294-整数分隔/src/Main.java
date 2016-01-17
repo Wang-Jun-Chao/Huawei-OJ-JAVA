@@ -11,23 +11,45 @@ import java.util.Scanner;
  */
 public class Main {
 
-    // 解题方法，使用类似于找零钱的方法二
     public static void main(String[] args) {
 
         //Scanner scanner = new Scanner(System.in);
         Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
         while (scanner.hasNext()) {
             int n = scanner.nextInt();
-
-
             System.out.println(intDivide(n));
         }
 
         scanner.close();
     }
 
-    // 保存中间结果，只计算一次就可以
-    private static int[] INT_DIVIDE = new int[1000 * 1000 + 1];
+
+    /**
+     * <pre>
+     * （1）如果是奇数：
+     * dp[i] = dp[i-1]
+     * 相当于在(i-1)每个分隔的前面添了一个1
+     *
+     * （2）如果是偶数：
+     * dp[i] = dp[i-1] + dp[i/2]
+     * 相当于在(i-1)每个分隔的前面添了一个1，同时(i/2)的每个分隔乘以2
+     * eg：
+     *  2：
+     *      1 1
+     *      2
+     *  3：
+     *      1 1 1
+     *      1 2
+     *  4:
+     *      1 1 1 1
+     *      1 1 2
+     *      2 2
+     *      4
+     * </pre>
+     *
+     * @param n
+     * @return
+     */
     private static int intDivide(int n) {
 
         // 题目所要求的数据范围
@@ -35,40 +57,17 @@ public class Main {
             return -1;
         }
 
-        // 所有不于于n的2的整数次幂
-        List<Integer> list = new ArrayList<Integer>();
-        int power2 = 1;
-
-        do {
-            list.add(power2);
-            power2 <<= 1;
-        } while (power2 <= n);
-
-
-        return intDivide(n, list, list.size() - 1);
-    }
-
-    private static int intDivide(int n, List<Integer> list, int idx) {
-
-        if (n == 1 || n == 0 || idx == 0) {
-            return 1;
+        int[] dp = new int[n + 1];
+        dp[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            if (i % 2 == 0) {
+                dp[i] = (dp[i - 1] + dp[i / 2]) % 1000000000;
+            } else {
+                dp[i] = dp[i - 1];
+            }
         }
 
-        if (n < 0 || idx < 0) {
-            return 0;
-        }
-
-        // 如果之前已经计算过了就不用再计算了
-        if (INT_DIVIDE[n] != 0) {
-            return INT_DIVIDE[n];
-        }
-
-        int rs = intDivide(n - list.get(idx), list, idx) % 1000000000;
-        rs = (rs + intDivide(n, list, idx - 1) % 1000000000) % 1000000000;
-
-        // 保存结果
-        INT_DIVIDE[n] = rs;
-        return rs;
+        return dp[n];
     }
 
 

@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.TreeMap;
 
 /**
  * Author: Íõ¿¡³¬
@@ -26,7 +27,7 @@ public class Main {
             }
 
             for (int i = 0; i < col; i++) {
-                char opt = scanner.next().charAt(0);
+                char opt =  scanner.next().charAt(0);
                 int x = scanner.nextInt();
                 int y = scanner.nextInt();
 

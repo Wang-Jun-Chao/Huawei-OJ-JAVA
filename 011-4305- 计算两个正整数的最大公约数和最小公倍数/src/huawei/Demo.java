@@ -8,7 +8,7 @@ public final class Demo {
     public static long getMaxDivisor(long m, long n) {
         // 保证第一个数不小于第二个数
         if (m < n) {
-            getMinMultiple(n, m);
+            getMaxDivisor(n, m);
         }
 
         long t;

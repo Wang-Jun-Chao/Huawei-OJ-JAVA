@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.TreeMap;
 
 /**
  * Author: 王俊超
@@ -15,10 +14,11 @@ public class Main {
 
 
         while (scanner.hasNext()) {
+
             // 人数
             int num = scanner.nextInt();
             // 操作数目
-            int col = scanner.nextInt();
+            int row = scanner.nextInt();
             // 学生成绩数组，第一个位置不用
             int[] arr = new int[num + 1];
 
@@ -26,12 +26,20 @@ public class Main {
                 arr[i] = scanner.nextInt();
             }
 
-            for (int i = 0; i < col; i++) {
+            for (int i = 0; i < row; i++) {
                 char opt =  scanner.next().charAt(0);
                 int x = scanner.nextInt();
                 int y = scanner.nextInt();
 
                 if (opt == 'Q') {
+
+                    if (x > y) {
+                        int t = x;
+                        x = y;
+                        y = t;
+                    }
+
+
                     int max = arr[x];
                     for (int j = x + 1; j <= y; j++) {
                         if (max < arr[j]) {
